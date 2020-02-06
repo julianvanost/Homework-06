@@ -3,11 +3,35 @@
   border-radius: 2px 2px 0 0;
   position: absolute;
   right: 25px;
-  top: 4.5rem;
-  bottom: 0;
+  top: auto;
+  bottom: 1.5rem;
+  left: auto;
+  width: 20%;
+  align-items: normal;
+}
+.col .row {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+.col-m-2 {
+    margin: 1.5rem;
+  }
+
+.primaryImg {
+  display: inline-flex;
+  border-radius: 2px 2px 0 0;
+  position: absolute;
+  right: 25px;
+  top: auto;
+  bottom: 50%;
   left: auto;
   width: 20%;
 }
+
+.card .card-image {
+  position: initial;
+}
+
 .col {
   -ms-flex-preferred-size: 0;
   flex-basis: 0;
@@ -16,9 +40,15 @@
   flex-grow: 1;
   max-width: 90%;
 }
+
 h2 {
   font-size: 4.2rem;
   line-height: 110%;
   margin: 0.8rem 0 -1.32rem 0;
   padding-left: 20px;
+}
+
+#searchResult {
+  margin-left: auto;
+  margin-right: auto;
 }

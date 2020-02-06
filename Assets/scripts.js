@@ -136,7 +136,7 @@ $(document).ready(function () {
         $('#searchResult').html(`
           <div class="card">
             <h2 class="">${location.name}</h2>
-            <div class="card-image">
+            <div class="card-image primaryImg">
               <img src="http:${current.condition.icon}" alt="${location.name}">
             </div>
             <div class="card-content">
