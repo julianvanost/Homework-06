@@ -209,18 +209,6 @@ $(document).ready(function () {
               <button class="btn waves-effect waves-light addToCityCards">Add To Recent</button>
             </div>
           </div>
-        </div>
-          <div class="card">
-            <h2 class="">${location.name}</h2>
-            <div class="card-image">
-              <img src="http:${current.condition.icon}" alt="${location.name}">
-            </div>
-            <div class="card-content">
-              <h4>Current Temperature: ${current.temp_f}℉</h4>
-              <h5>UV Index: ${current.uv}</h5>
-              <h5>Wind Speed: ${current.wind_mph} Mph</h5>
-            </div>
-          </div>
           `)
         $('#inputCityText').val('')
       })
@@ -228,7 +216,7 @@ $(document).ready(function () {
 
     // Store to localStorage
 
-    localStorage.setItem('city', JSON.stringify(location.name));
+    localStorage.setItem('object', JSON.stringify(object));
     let list = JSON.parse(localStorage.getItem(location.name)) || []
   })
   $(document).on('click', event => {
@@ -237,12 +225,14 @@ $(document).ready(function () {
       let locationElement = document.createElement('div')
       locationElement.className = 'card'
       locationElement.innerHTML = `
+      <div id="forcastCards" class="col m4">  
         <div class="align-left card-content">
           <h4>${location.name}</h4>
         </div>
         <div class="card-action">
           <button class="btn waves-effect waves-light removeWatchlist">Remove from Watchlist</button>
         </div>
+      </div>
         `
       $('#watchlist').append(locationElement)
     } else if (event.target.classList.contains('removeWatchlist')) {
