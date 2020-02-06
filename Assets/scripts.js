@@ -125,8 +125,13 @@ $(document).ready(function () {
         console.log(current.uv)
         console.log(location.name)
         console.log(forecast)
-        // console.log(forecast.forecastday.date[0])
-        // console.log(forecast.forecastday.day[0])
+        console.log(forecast.forecastday[0].date)
+        console.log(forecast.forecastday[0].day)
+        console.log(forecast.forecastday[0].day.uv)
+        console.log(forecast.forecastday[0].day.maxtemp_f)
+        console.log(forecast.forecastday[0].day.mintemp_f)
+        console.log(forecast.forecastday[0].day.condition.text)
+        console.log(forecast.forecastday[0].day.condition.icon)
 
         $('#searchResult').html(`
           <div class="card">
@@ -139,35 +144,92 @@ $(document).ready(function () {
               <h5>Humidity: ${current.uv}</h5>
               <h5>UV Index: ${current.uv}</h5>
               <h5>Wind Speed: ${current.wind_mph} Mph</h5>
-            </div>
-            <div class="card-action">
+              </div>
+              <div class="card-action">
                <!--<button class="btn waves-effect waves-light addToCityCards">Add To Recent</button>-->
-            </div>
-          </div>
-         <div>
-            
-
+               </div>
+               </div>
+               <div>
+                 <h4>5 Day Forecast:</h4>
+                 <div class="row">
+                   <div class="col-m-2">
+                     <div class="card">
+                       <div class="card-body">
+                         <h4 id="" class="card-title">Date: ${forecast.forecastday[0].date}</h4>
+                         <div class="card-image">
+                           <img src="http:${forecast.forecastday[0].day.condition.icon}" alt="${location.name}">
+                        </div>
+                           <p id="">Conditions: ${forecast.forecastday[0].day.condition.text}</p>
+                           <p id="">High: ${forecast.forecastday[0].day.maxtemp_f}</p>
+                           <p id="">Low: ${forecast.forecastday[0].day.mintemp_f}</p>
+                           <p id="humiditiy">UV: ${forecast.forecastday[0].day.uv}</p>
+                         </div>
+                       </div>
+                     </div>
+                   <div class="col-m-2">
+                     <div class="card">
+                       <div class="card-body">
+                         <h4 id="" class="card-title">Date: ${forecast.forecastday[1].date}</h4>
+                         <div class="card-image">
+                           <img src="http:${forecast.forecastday[1].day.condition.icon}" alt="${location.name}">
+                        </div>
+                           <p id="">Conditions: ${forecast.forecastday[1].day.condition.text}</p>
+                           <p id="">High: ${forecast.forecastday[1].day.maxtemp_f}</p>
+                           <p id="">Low: ${forecast.forecastday[1].day.mintemp_f}</p>
+                           <p id="humiditiy">UV: ${forecast.forecastday[1].day.uv}</p>
+                         </div>
+                       </div>
+                     </div>
+                   <div class="col-m-2">
+                     <div class="card">
+                       <div class="card-body">
+                         <h4 id="" class="card-title">Date: ${forecast.forecastday[2].date}</h4>
+                         <div class="card-image">
+                           <img src="http:${forecast.forecastday[2].day.condition.icon}" alt="${location.name}">
+                        </div>
+                           <p id="">Conditions: ${forecast.forecastday[2].day.condition.text}</p>
+                           <p id="">High: ${forecast.forecastday[2].day.maxtemp_f}</p>
+                           <p id="">Low: ${forecast.forecastday[2].day.mintemp_f}</p>
+                           <p id="humiditiy">UV: ${forecast.forecastday[2].day.uv}</p>
+                         </div>
+                       </div>
+                     </div>
+                   <div class="col-m-2">
+                     <div class="card">
+                       <div class="card-body">
+                         <h4 id="" class="card-title">Date: ${forecast.forecastday[3].date}</h4>
+                         <div class="card-image">
+                           <img src="http:${forecast.forecastday[3].day.condition.icon}" alt="${location.name}">
+                        </div>
+                           <p id="">Conditions: ${forecast.forecastday[3].day.condition.text}</p>
+                           <p id="">High: ${forecast.forecastday[3].day.maxtemp_f}</p>
+                           <p id="">Low: ${forecast.forecastday[3].day.mintemp_f}</p>
+                           <p id="humiditiy">UV: ${forecast.forecastday[3].day.uv}</p>
+                         </div>
+                       </div>
+                     </div>
+                   <div class="col-m-2">
+                     <div class="card">
+                       <div class="card-body">
+                         <h4 id="" class="card-title">Date: ${forecast.forecastday[4].date}</h4>
+                         <div class="card-image">
+                           <img src="http:${forecast.forecastday[4].day.condition.icon}" alt="${location.name}">
+                        </div>
+                           <p id="">Conditions: ${forecast.forecastday[4].day.condition.text}</p>
+                           <p id="">High: ${forecast.forecastday[4].day.maxtemp_f}</p>
+                           <p id="">Low: ${forecast.forecastday[4].day.mintemp_f}</p>
+                           <p id="humiditiy">UV: ${forecast.forecastday[4].day.uv}</p>
+                         </div>
+                       </div>
+                     </div>
+                     </div>
+               
+               
 
           `)
         $('#inputCityText').val('')
       })
       .catch(e => console.error(e))
-    // < div class="container" >
-    //   <h4>5 Day Forecast:</h4>
-    //   <div class="row">
-    //     <div class="col-sm-2 p-1">
-    //       <div class="card">
-    //         <div class="card-body">
-    //           <h4 id="" class="card-title">${forecast.forecastday.date}</h4>
-    //           <div class="card-image">
-    //             <img src="http:${forecast.condition.icon}" alt="${location.name}">
-    //             </div>
-    //             <p id="">maxtemp_f</p>
-    //             <p id="">mintemp_f</p>
-    //             <p id="humiditiy"></p>
-    //           </div>
-    //         </div>
-    //       </div>
     // Store to localStorage
 
     localStorage.setItem('object', location.city);
