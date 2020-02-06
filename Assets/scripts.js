@@ -149,7 +149,6 @@ $(document).ready(function () {
                <!--<button class="btn waves-effect waves-light addToCityCards">Add To Recent</button>-->
                </div>
                </div>
-               <div>
                  <h4>5 Day Forecast:</h4>
                  <div class="row">
                    <div class="col-m-2">
