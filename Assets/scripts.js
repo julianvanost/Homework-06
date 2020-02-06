@@ -117,7 +117,7 @@ $(document).ready(function () {
   $("#makeApiCall").on('click', function (event) {
     event.preventDefault()
     let inputCity = $("#inputCityText").val();
-    $.getJSON("http://api.weatherapi.com/v1/forecast.json?key=ff4f207a8ae5485cb4320106200402&q=" + inputCity + "&days=" + 5)
+    $.getJSON("https://api.weatherapi.com/v1/forecast.json?key=ff4f207a8ae5485cb4320106200402&q=" + inputCity + "&days=" + 5)
       .then(({ current, location, forecast }) => {
         console.log(current)
         console.log(current.condition.text)
@@ -137,7 +137,7 @@ $(document).ready(function () {
           <div class="card">
             <h2 class="">${location.name}</h2>
             <div class="card-image primaryImg">
-              <img src="http:${current.condition.icon}" alt="${location.name}">
+              <img src="https:${current.condition.icon}" alt="${location.name}">
             </div>
             <div class="card-content">
               <h4>Current Temperature: ${current.temp_f}℉</h4>
@@ -156,7 +156,7 @@ $(document).ready(function () {
                        <div class="card-body">
                          <h4 id="" class="card-title">Date: ${forecast.forecastday[0].date}</h4>
                          <div class="card-image">
-                           <img src="http:${forecast.forecastday[0].day.condition.icon}" alt="${location.name}">
+                           <img src="https:${forecast.forecastday[0].day.condition.icon}" alt="${location.name}">
                         </div>
                            <p id="">Conditions: ${forecast.forecastday[0].day.condition.text}</p>
                            <p id="">High: ${forecast.forecastday[0].day.maxtemp_f}</p>
@@ -170,7 +170,7 @@ $(document).ready(function () {
                        <div class="card-body">
                          <h4 id="" class="card-title">Date: ${forecast.forecastday[1].date}</h4>
                          <div class="card-image">
-                           <img src="http:${forecast.forecastday[1].day.condition.icon}" alt="${location.name}">
+                           <img src="https:${forecast.forecastday[1].day.condition.icon}" alt="${location.name}">
                         </div>
                            <p id="">Conditions: ${forecast.forecastday[1].day.condition.text}</p>
                            <p id="">High: ${forecast.forecastday[1].day.maxtemp_f}</p>
@@ -184,7 +184,7 @@ $(document).ready(function () {
                        <div class="card-body">
                          <h4 id="" class="card-title">Date: ${forecast.forecastday[2].date}</h4>
                          <div class="card-image">
-                           <img src="http:${forecast.forecastday[2].day.condition.icon}" alt="${location.name}">
+                           <img src="https:${forecast.forecastday[2].day.condition.icon}" alt="${location.name}">
                         </div>
                            <p id="">Conditions: ${forecast.forecastday[2].day.condition.text}</p>
                            <p id="">High: ${forecast.forecastday[2].day.maxtemp_f}</p>
@@ -198,7 +198,7 @@ $(document).ready(function () {
                        <div class="card-body">
                          <h4 id="" class="card-title">Date: ${forecast.forecastday[3].date}</h4>
                          <div class="card-image">
-                           <img src="http:${forecast.forecastday[3].day.condition.icon}" alt="${location.name}">
+                           <img src="https:${forecast.forecastday[3].day.condition.icon}" alt="${location.name}">
                         </div>
                            <p id="">Conditions: ${forecast.forecastday[3].day.condition.text}</p>
                            <p id="">High: ${forecast.forecastday[3].day.maxtemp_f}</p>
@@ -212,7 +212,7 @@ $(document).ready(function () {
                        <div class="card-body">
                          <h4 id="" class="card-title">Date: ${forecast.forecastday[4].date}</h4>
                          <div class="card-image">
-                           <img src="http:${forecast.forecastday[4].day.condition.icon}" alt="${location.name}">
+                           <img src="https:${forecast.forecastday[4].day.condition.icon}" alt="${location.name}">
                         </div>
                            <p id="">Conditions: ${forecast.forecastday[4].day.condition.text}</p>
                            <p id="">High: ${forecast.forecastday[4].day.maxtemp_f}</p>
